@@ -1,0 +1,24 @@
+<%- include("header") %> 
+<div class="container2">
+    <div class="box">
+        <div class="button">
+            <div id="btn"></div>
+            <button type="button" class="toggle" >Login</button>
+            <!-- <button type="button" class="toggle" onclick="regis()">Register</button> -->
+        </div>
+        
+        <form action="/login" method="POST" class="login" id="login">
+            <input type="email" class="field" name="user" placeholder="email" required>
+            <input type="text" class="field" name="pass" placeholder="password" required>
+
+            <!-- <input type="checkbox" class="checkbox"><span>Remember password</span> -->
+
+            <button type="submit" class="submit">Login</button>
+        </form>
+        
+
+        <a href="signup" class="btna">Register</a>
+    </div>
+    
+</div>
+<%- include("footer") %> 

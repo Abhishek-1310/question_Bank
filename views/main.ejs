@@ -1,0 +1,54 @@
+<%- include("header") -%>
+<%- include("nav") -%> 
+<div class="sec">
+    <div class="ans">
+        <div class="all">
+            <div class="count1">
+                <button class="inc" >+</button>
+                <h2 class="root" >0</h2>
+                <button class="dec" >-</button>
+            </div>
+            <div class="cont1">
+                <h3 class="q sty">About question bank</h3>
+            <h5 class="h sty">how to search in question bank</h5>
+            </div>
+        </div>
+        
+        <form action="/add" method="POST">
+            <input type="text" name="newitem" class=" inpt" placeholder="Answer posted" >    
+            <button  name="list" class="btn btn-success bttn" >post</button>
+        </form>
+        <br>
+        <p class="p sty"><%= s_cont %></p>
+        
+        
+        
+        <hr class="bra">
+        <% posts.forEach(function(post){ %>  
+        
+            <div class="all">
+                <div class="count1">
+                    <button class="inc" onclick="increment()">+</button>
+                    <h2 class="root" >0</h2>
+                    <button class="dec" onclick="decrement()">-</button>
+                </div>
+                <div class="cont1">
+                    <h3 class="q sty"> <%= post.title  %>  </h3>
+                    <h5 class="h sty"> <%=  post.content %> </h5>
+                </div>
+            </div>
+            
+            <form action="/add" method="POST">
+                <input type="text" name="newitem" class=" inpt" placeholder="Post Answer" >    
+                <button type="submit" name="list" class="btn btn-warning bttn" value=<%= post._id %>>post</button>
+            </form>
+            <br>
+            <p class="p sty "><%= post.answer %> </p>
+            
+            
+         <% }); %>
+
+    </div>
+</div>
+
+<%- include("footer") -%>  
